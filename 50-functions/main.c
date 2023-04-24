@@ -1,21 +1,37 @@
 #include <stdio.h>
 #include <string.h>
 
-char* saySalve() { return "Salve salve!\n"; }
-
-char* sayGreet(char* name) {
-    char greet[100] = "Hello, ";
-    strcat(greet, name);
-    strcat(greet, "! How are you!?\n");
-    return strdup(greet);
-}
+// Prototypes
+int myLen(char* s);
+void sepCsv(char* s);
 
 int main() {
-    char* s = saySalve();
-    printf("%s\n", s);
+    char name[] = "Mateus";
 
-    char* greet = sayGreet("Mateus");
-    printf("%s\n", greet);
+    // Copy Andre to name
+    strcpy(name, "Andre");
+
+    // Concat eeee to name
+    strcat(name, "eeee");
+
+    int l = myLen(name);
+
+    printf("The length of %s is %d\n", name, l);
+
+    char csv[] = "Mateus,Andre,Joao";
+    sepCsv(csv);
 
     return 0;
+}
+
+// Function that gives the length of string
+int myLen(char* s) { return strlen(s); }
+
+void sepCsv(char* s) {
+    char* token = strtok(s, ",");
+
+    while (token != NULL) {
+        printf("%s\n", token);
+        token = strtok(NULL, ",");
+    }
 }
