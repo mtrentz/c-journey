@@ -7,6 +7,9 @@ int main() {
     printf("%p\n", i);
     printf("%d\n", *i);
 
+    // Free the memory
+    free(i);
+
     printf("----\n");
 
     int arrSize = 5;
@@ -20,6 +23,9 @@ int main() {
     printf("Array values are: %d, %d, %d, %d, %d\n", arr[0], arr[1], arr[2],
            arr[3], arr[4]);
 
+    // Free the memory
+    free(arr);
+
     printf("----\n");
 
     // To create one that is not gibberish we can use calloc
@@ -29,6 +35,9 @@ int main() {
     arr2[4] = 50;
     printf("Array values are: %d, %d, %d, %d, %d\n", arr2[0], arr2[1], arr2[2],
            arr2[3], arr2[4]);
+
+    // Free the memory
+    free(arr2);
 
     return 0;
 }

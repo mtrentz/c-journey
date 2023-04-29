@@ -60,5 +60,12 @@ int main() {
         printf("%d ", newArr[i]);
     }
 
+    printf("\n");
+
+    // Free the memory
+    free(newName);
+    free(newerName);
+    free(newArr);
+
     return 0;
 }
