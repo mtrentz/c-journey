@@ -2,3 +2,4 @@ main
 **/main
 *.dSYM
 settings.json
+*.txt
